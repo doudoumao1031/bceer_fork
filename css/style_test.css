@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+#banner{width:1680px;height:814px; position:relative;left:50%;top:0;margin-left:-840px;}
+/*尺寸 定位*/
+.focus{width:1680px;height:814px;position:relative;float:left;overflow:hidden}
+
+/*换灯箱尺寸 定位 超出隐藏 relative锚定*/
+/*.f426x240 li{position:absolute;left:0;top:0;}*/
+/*.f426x240 a{position:absolute; bottom:0;left:0px;width:648px;height:47px; background:url(../images/bj.png) no-repeat; display:block; z-index:999; padding-left:30px; padding-right:88px; padding-top:11px; color:#d0cdcc; font-family:"微软雅黑";}*/
+/*.f426x240 a:hover{color:#FFF;}*/
+/*幻灯片组件 定位 实际上这个a标签效果没出来*/
+/*.focus .bj{width:97px;height:23px; position:absolute;left:363px;top:243px; background:url(../images/dianBj.png) no-repeat;}*/
+
+/*.rslides{width:100%;position:relative;list-style:none;padding:0;}*/
+/*.rslides_nav{height:54px;width:54px;position:absolute;text-indent:-9999px;overflow:hidden;left:80px;top:334px; z-index:999;*/
+    /*display:none*/
+/*}*/
+
+
+#main{ height:107px; width:1164px; position:absolute;bottom:70px;left:50%; margin-left:-582px; z-index:999; padding-top:27px;}
+#main ul{padding-left:30px;}
+#main ul li{width:370px;height:79px; float:left;}
+#main ul li dl dt{width:79px;height:79px; float:left; margin-right:13px;}
+#main ul li dl dd{width:200px;height:79px; float:left;}
+/*划定各个范围*/
+#main ul li dl dd h2{width:200px;height:40px; line-height:19px; font-size:14px; margin-bottom:4px;}
+#main ul li dl dd h2 a{color:#FFF;}
+#main ul li dl dd h2 a:hover{color:#002f7b; font-weight:600;}
+#main ul li dl dd h2 span{display:block; font-size:12px; color:#FFF;}
+#main ul li dl dd p{width:252px;height:40px; line-height:18px; font-size:12px; color:#FFF; display:block;}
+/*标题栏效果*/

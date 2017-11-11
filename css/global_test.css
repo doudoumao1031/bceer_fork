@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+body,ol,table,tr,td,dt,dd,dl,h1,h2,h3,h4,h5,h6,form,input,select,textarea{
+    margin:0;padding:0; font-family:"微软雅黑"; font-size:12px; font-weight:normal;
+}
+
+ul,li{margin:0;padding:0; font-family:"微软雅黑";font-weight:normal;}
+
+html{ overflow-x:hidden;}
+
+body{font-size:12px;color:#333; margin:0; padding:0; _overflow:hidden; overflow-x:hidden;overflow:visible;}
+
+input,button,select,textarea{outline:none}
+
+p{ margin:0; padding:0;}
+
+a img{border:none;}
+
+li{list-style-type:none;}
+
+a{text-decoration:none;color:#000;}
+
+input{vertical-align:middle;font-family:"微软雅黑";}
+
+table{border-collapse:collapse;font-family:"微软雅黑";}
+
+a:hover{cursor:pointer;}
+
+a:hover img{filter:alpha(opacity=90);-moz-opacity:0.9;opacity:0.9;}
+
+a,area { blr:expression(this.onFocus=this.blur()) } /* for IE */
+/*blr没有特殊意思，expression 条件，这句话的意思是链接 a 在获得焦点的同时失去焦点。*/
+/*如果你用的是图片链接什么的，他不会显示周边的虚线。*/
+
+:focus { -moz-outline-style: none; } /* for Firefox */
+
+a { outline:none; } /* for FF Chrome */
+
+.dis{display:none;}
+
+.clear{ clear:both;}
+
+/*page*/
+.page{ padding-top:80px; text-align:right; clear:both; padding-right:25px;}
+
+.page a{ display:inline-block; margin:0 5px; color:#fff}
+
+.page a:hover{text-decoration:underline;}
+
+.page .cur{ color:#fff;text-decoration:underline;}
+
+.page2{ text-align:right; clear:both; padding-right:25px;}
+
+.page2 a{ display:inline-block; margin:0 5px; color:#fff;height:24px; line-height:24px; padding:0 5px; border:1px #d5d5d5 solid; color:#515151;}
+
+.page2 a:hover{ border:1px #00286c solid; color:#00286c}
+
+.page2 .cur{border:1px #00286c solid; color:#00286c}
+
+
+/*header header.logo header.right*/
+#header{width: 1388px; height: 75px; position: absolute; left: 50%; top: 0; margin-left: -694px; z-index: 999; background: #fff;}
+/*header脱离文档流 定长定高 居中布局*/
+
+#header .logo{width: 402px;height: 75px; float: left; overflow: hidden;}
+/*logo定长定高 左浮动*/
+#header .logo a img{display:block}
+/*logo图block*/
+
+#header .right{width:176px;height:75px; float:right; background:#002a72;}
+/*搜索栏 定长定高 右浮动*/
+#header .right ul li{float:left; width:88px;height:75px; position:relative;}
+/*子组件 定长高 左浮动*/
+#header .right ul li a{padding-top:30px; display:block;height:45px; text-align:center;}
+/*这儿这样写 是为了方便内部图文布局（居中）而且padding依然触发cuisor*/
+#header .right ul li a img{display:block; margin:0 auto;}
+/*内部图水平居中*/
+#header .right ul li a:hover{background:#002465}
+/*hover状态变色*/
+#header .right ul li.hover a{background:#002465}
+/*hover状态变色*/
+#header .right ul li .search{width:264px;height:70px; position:absolute; top:75px;left:-112px; background:#002465; padding-top:22px; padding-left:24px;
+    display:none;
+}
+/*子搜索栏定长高 绝对定位 内部布局padding上左限制*/
+#header .right ul li .search h2{font-size:12px; font-weight:600; color:#FFF; padding-left:25px; background: url("../images/search.png") no-repeat left;text-transform:uppercase;height:16px; line-height:16px; margin-bottom:7px;}
+/*h2渲染 字体 给背景图留空 上背景图 下外边距*/
+#header .right ul li .search .search1{width:264px;height:22px;}
+/*子搜索栏定长高*/
+#header .right ul li .search .text1{width:169px; padding:0 8px; background:#FFF; float:left;height:22px; line-height:22px; border:none;}
+#header .right ul li .search .button{width:58px; color:#fff; border:none;background:#9bd400; float:left;height:22px; line-height:22px; text-align:center; cursor:pointer;}
+#header .right ul li .search .button:hover{background:#acea03;}
+/*子搜索栏组件 精细布局*/
+
+/*header.nav*/
+#header .nav{float:right; width:800px; display:table;}
+/*nav定长 右浮动 table渲染 display:table;此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。*/
+#header .nav ul li{float:right; width:100px;height:75px; line-height:75px; text-align:center; position:relative;}
+#header .nav ul li a{width:100px;height:75px; background:#FFF; color:#000; font-size:13px; display:block;}
+/*子组件盒子 这儿line-height继承 写得比较漂亮*/
+#header .nav ul li a:hover{background:#073370; color:#FFF;}
+#header .nav ul li.hover a{background:#073370; color:#FFF;}
+/*hover效果 注意加了两个*/
+#header .nav ul li .erji{width:600px;height:59px; position:absolute;top:75px;left:0;
+    display:none;
+}
+/*划子栏范围*/
+#header .nav ul li .erji span{width:100px;height:59px; float:left; display:block;}
+#header .nav ul li .erji span a{width:100px;height:59px; float:left; display:block; line-height:59px;background:#073370; }
+/*划定子栏单元块 重置行高*/
+#header .nav ul li .erji span a:hover{background:#002465}
+/*hover渲染*/
+#header .nav ul li #erji16 span{width:140px;height:59px; float:left; display:block;}
+#header .nav ul li #erji16 span a{width:140px;height:59px; float:left; display:block; line-height:59px;background:#073370; }
+#header .nav ul li #erji16 span a:hover{background:#002465}
+/*超出栏个性化*/
+
+
+/*footer*/
+#footer{ width:100%; position:absolute;bottom:0px;left:0;z-index:999; background:#002a72;height:42px;}
+/*定位 尺寸*/
+#footer .foot{width:1164px; position:absolute;bottom:0px;left:50%; margin-left:-582px; z-index:999;height:42px;}
+#footer .foot .icp{width:500px; float:left;height:42px; line-height:42px; font-size:12px; color:#3d78d6;}
+/*子组件定位 尺寸*/
+#footer .foot .right{ width:233px;height:42px; float:right; background:#002262; text-align:center; line-height:42px; color:#FFF; font-size:12px; position:relative;}
+/*子组件定位 尺寸 relative为子菜单锚定*/
+#footer .foot .right span{display:block;height:42px; cursor:pointer;}
+/*设为block 强行占满*/
+#footer .foot .right ul{width:233px;position:absolute;bottom:42px; background:#002262;left:0; padding:10px 0;
+    display:none;
+}
+/*子菜单栏定位*/
+#footer .foot .right ul li{width:233px;height:42px; line-height:42px; font-size:12px;}
+#footer .foot .right ul li a{width:233px;height:42px; display:block; color:#FFF;}
+#footer .foot .right ul li a:hover{background:#02379c;}
+/*子菜单栏效果渲染*/

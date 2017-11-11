@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ResponsiveSlides.js &middot; Responsive jQuery slideshow</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../responsiveslides.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        maxwidth: 800,
+        speed: 800
+      });
+
+      // Slideshow 2
+      $("#slider2").responsiveSlides({
+        auto: false,
+        pager: true,
+        speed: 300,
+        maxwidth: 540
+      });
+
+      // Slideshow 3
+      $("#slider3").responsiveSlides({
+        manualControls: '#slider3-pager',//似乎是建立动态联动
+        maxwidth: 540,
+//          nav:true
+      });
+
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+//        namespace: "doudoumao",//会联动动态修改一系列类名
+//        prevText: "dou",//动态改变
+//        nextText: "mao",//动态改变
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+  </script>
+</head>
+<!--
+  API参数：
+  $(".rslides").responsiveSlides({
+  auto: true,             // Boolean: 设置是否自动播放, true or false
+  speed: 500,            // Integer: 动画持续时间，单位毫秒
+  timeout: 4000,          // Integer: 图片之间切换的时间，单位毫秒
+  pager: false,           // Boolean: 是否显示页码, true or false
+  nav: false,             // Boolean: 是否显示左右导航箭头（即上翻下翻）, true or false
+  random: false,          // Boolean: 随机幻灯片顺序, true or false
+  pause: false,           // Boolean: 鼠标悬停到幻灯上则暂停, true or false
+  pauseControls: true,    // Boolean: 悬停在控制板上则暂停, true or false
+  prevText: "Previous",   // String: 往前翻按钮的显示文本 动态改变
+  nextText: "Next",       // String: 往后翻按钮的显示文本 动态改变
+  maxwidth: "",           // Integer: 幻灯的最大宽度
+  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+
+  manualControls: "",     // Selector: 声明自定义分页导航 似乎是建立动态联动
+  //一般用来实现缩略图效果 manualControls: '#slider-pager'
+
+  namespace: "rslides",   // String: 修改默认的容器名称 会联动动态修改一系列类名
+   //一般用来实现分页效果（点状或者数字） pager: true, nav: true, namespace: 'centered-btns',
+
+  before: function(){},   // Function: 回调之前的参数
+  after: function(){}     // Function: 回调之后的参数
+  });
+-->
+<!--不错的实例：http://www.sucaihuo.com/js/182.html-->
+<body>
+  <div id="wrapper">
+    <h1>ResponsiveSlides.js</h1>
+    <h2>Simple &amp; lightweight responsive slideshow plugin (in 1kb)</h2>
+
+
+
+    <!-- Slideshow 1 -->
+    <ul class="rslides" id="slider1">
+      <li><img src="images/1.jpg" alt=""></li>
+      <li><img src="images/2.jpg" alt=""></li>
+      <li><img src="images/3.jpg" alt=""></li>
+    </ul>
+
+
+
+    <!-- Slideshow 2 -->
+    <ul class="rslides" id="slider2">
+      <li><a href="#"><img src="images/1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+    </ul>
+
+
+
+    <!-- Slideshow 3 -->
+    <ul class="rslides" id="slider3">
+      <li><img src="images/1.jpg" alt=""></li>
+      <li><img src="images/2.jpg" alt=""></li>
+      <li><img src="images/3.jpg" alt=""></li>
+    </ul>
+
+    <!-- Slideshow 3 Pager -->
+    <ul id="slider3-pager">
+      <li><a href="#"><img src="images/1_thumb.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/2_thumb.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/3_thumb.jpg" alt=""></a></li>
+    </ul>
+
+
+
+    <!-- Slideshow 4 -->
+    <div class="callbacks_container">
+      <ul class="rslides" id="slider4">
+        <li>
+          <img src="images/1.jpg" alt="">
+          <p class="caption">This is a caption</p>
+        </li>
+        <li>
+          <img src="images/2.jpg" alt="">
+          <p class="caption">This is another caption</p>
+        </li>
+        <li>
+          <img src="images/3.jpg" alt="">
+          <p class="caption">The third caption</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- This is here just to demonstrate the callbacks -->
+    <ul class="events">
+      <li><h3>Example 4 callback events</h3></li>
+    </ul>
+
+
+
+    <a href="http://responsiveslides.com/" id="download">See the documentation</a>
+    <p class="footer">ResponsiveSlides.js is created by <a href="http://viljamis.com">@viljamis</a>. It's released under the MIT license. If you have any questions or feedback you can use the <a href="https://github.com/viljami/ResponsiveSlides.js">GitHub project page</a>.</p>
+  </div>
+</body>
+</html>
